@@ -1,22 +1,44 @@
 pipeline {
     agent any
+
     stages {
+        stage('Setup') {
+            steps {
+                echo 'Setting up the environment...'
+                script {
+                    // Setup steps, like setting environment variables
+                }
+            }
+        }
+        
+        stage('Lint') {
+            steps {
+                echo 'Linting the code...'
+                sh 'npx eslint src/*.js' // Adjust this command based on your project structure
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Building the project...'
-                // Add build steps here, e.g., `sh 'make build'`
+                echo 'Building...'
+                sh 'echo "No build required for static HTML/JS projects"'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing the project...'
-                // Add test steps here, e.g., `sh 'make test'`
+                echo 'Testing...'
+                sh 'echo "Running tests"'
+                // Add a command to run tests, like running a headless browser test
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying the project...'
-                // Add deploy steps here, e.g., `sh 'make deploy'`
+                echo 'Deploying...'
+                // Mock deployment command
+                sh 'echo "Deploying to staging server"'
+                // Use tools like rsync or scp to deploy to a server
             }
         }
     }
