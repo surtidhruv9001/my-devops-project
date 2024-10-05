@@ -6,11 +6,16 @@ pipeline {
             steps {
                 echo 'Setting up the environment...'
                 script {
-                    // Setup steps, like setting environment variables
+                    // Example of environment setup, this is just a placeholder
+                    echo 'Environment setup complete.'
                 }
             }
         }
         
+        // Continue with other stages
+    }
+}
+
         stage('Lint') {
             steps {
                 echo 'Linting the code...'
