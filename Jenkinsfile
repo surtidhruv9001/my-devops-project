@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    tools {
-        // Ensure Python 3 is available if using a virtual environment
-        python 'Python3'
-    }
+   
     environment {
         // Define the virtual environment path
         VENV_PATH = "${WORKSPACE}/.venv"
