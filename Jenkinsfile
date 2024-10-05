@@ -5,16 +5,8 @@ pipeline {
         stage('Setup') {
             steps {
                 echo 'Setting up the environment...'
-                script {
-                    // Example of environment setup, this is just a placeholder
-                    echo 'Environment setup complete.'
-                }
-            }
-        }
-        
-        // Continue with other stages
-    }
-}
+		}
+	}
 
         stage('Lint') {
             steps {
